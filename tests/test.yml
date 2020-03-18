@@ -1,5 +1,7 @@
 ---
 - hosts: localhost
-  remote_user: root
-  roles:
-    - martianplatypus.virtual_mac
+  connection: local
+  vars_files:
+    - ../vars/main.yml
+  tasks:
+    - import_tasks: ../tasks/main.yml
