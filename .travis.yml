@@ -1,0 +1,49 @@
+---
+sudo: required
+language: generic
+
+matrix:
+  include:
+    # Mojave
+    - os: osx
+      osx_image: xcode10.3
+      env: ANSIBLE_VERSION='<2.9.0'
+    # High Sierra
+    - os: osx
+      osx_image: xcode10.1
+      env: ANSIBLE_VERSION='<2.9.0'
+
+before_install:
+  # Install pip
+  - curl https://bootstrap.pypa.io/get-pip.py | sudo -H /usr/bin/python
+  - which pip
+  - pip --version
+  - export PATH=${PATH}:/Users/travis/Library/Python/2.7/bin
+
+install:
+  # Dependencies
+  - >-
+    pip install "ansible${ANSIBLE_VERSION}"
+    ansible-lint
+    yamllint
+
+  # Check ansible version
+  - ansible --version
+  - ansible-lint --version
+  - yamllint --version
+
+  # Create ansible.cfg with correct roles_path
+  - printf '[defaults]\nroles_path=../' >ansible.cfg
+
+script:
+  # Lint all YAML files.
+  - yamllint .
+
+  # Check the role/playbook's syntax.
+  - ansible-playbook tests/test.yml -i tests/inventory --syntax-check
+
+  # Lint the role.
+  - ansible-lint
+
+notifications:
+  webhooks: https://galaxy.ansible.com/api/v1/notifications/
