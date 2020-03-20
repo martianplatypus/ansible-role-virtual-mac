@@ -43,7 +43,7 @@ script:
   - ansible-playbook tests/test.yml -i tests/inventory --syntax-check
 
   # Lint the role.
-  - ansible-lint
+  - ansible-lint tests/playbook.yml
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
