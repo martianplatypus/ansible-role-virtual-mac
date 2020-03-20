@@ -40,11 +40,11 @@ script:
   - yamllint .
 
   # Check the role/playbook's syntax.
-  - ansible-playbook tests/playbook.yml -i tests/inventory --syntax-check
+  - ansible-playbook tests/playbook.yml -i tests/inventory -K --syntax-check
 
   # Test the playbook.
-  - ansible-playbook tests/playbook.yml
-  
+  # - ansible-playbook tests/playbook.yml
+
   # Lint the role.
   - ansible-lint tests/playbook.yml
 
