@@ -1,7 +1,5 @@
 ---
 - hosts: localhost
   connection: local
-  vars_files:
-    - ../vars/main.yml
   roles:
-    - martianplatypus.virtual_mac
+    - role: ansible-role-virtual-mac

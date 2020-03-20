@@ -22,5 +22,4 @@ galaxy_info:
     - vagrant
     - virtualbox
 
-dependencies:
-  - geerlingguy.homebrew
+dependencies: []
