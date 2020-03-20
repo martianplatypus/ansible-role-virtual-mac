@@ -1,6 +1,1 @@
 ---
-- name: Install apps via homebrew
-  homebrew_cask:
-    name: "{{ item.name | default(item) }}"
-    state: "{{ item.state | default('present') }}"
-  with_items: "{{ homebrew_cask_apps }}"
