@@ -43,7 +43,7 @@ script:
   - ansible-playbook tests/playbook.yml -i tests/inventory -K --syntax-check
 
   # Test the playbook.
-  # - ansible-playbook tests/playbook.yml
+  - ansible-playbook tests/playbook.yml
 
   # Lint the role.
   - ansible-lint tests/playbook.yml
