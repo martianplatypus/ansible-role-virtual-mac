@@ -1,5 +1,6 @@
 ---
 homebrew_cask_apps:
   - virtualbox
+  - virtualbox-extension-pack
   - vagrant
   - vagrant-manager
