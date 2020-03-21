@@ -4,10 +4,6 @@ language: generic
 
 matrix:
   include:
-    # Mojave
-    # - os: osx
-    #   osx_image: xcode10.3
-    #   env: ANSIBLE_VERSION='<2.9.0'
     # High Sierra
     - os: osx
       osx_image: xcode10.1
