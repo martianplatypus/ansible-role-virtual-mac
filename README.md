@@ -5,7 +5,7 @@ virtual-mac
 [![Build Status][badge-travis]][link-travis]
 [![MIT Licensed][badge-license]][link-license]
 
-Uses homebrew to install VirtualBox, Vagrant and Vagrant-manager on MacOS.
+Uses homebrew to install VirtualBox, Vagrant and Vagrant-manager on MacOS 10.13 and above.
 
 Requirements
 ------------
@@ -30,6 +30,7 @@ A list of casks to be installed:
 homebrew_cask_apps
 ```
 * virtualbox
+* virtualbox-extension-pack
 * vagrant
 * vagrant-manager
 
