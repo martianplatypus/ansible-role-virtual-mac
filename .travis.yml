@@ -1,13 +1,10 @@
 ---
-sudo: required
-language: generic
-
-matrix:
+jobs:
   include:
-    # High Sierra
-    - os: osx
+    - name: High Sierra
+      os: osx
       osx_image: xcode10.1
-      env: ANSIBLE_VERSION='<2.9.0'
+      language: minimal
 
 before_install:
   # Install pip
